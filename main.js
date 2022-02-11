@@ -29,7 +29,17 @@ const app = new Vue(
             },
 
             addAlbum() {
-                this.albums.push({text: this.newAlbum});
+                this.albums.push({text: this.newAlbum, done: false});
+                this.newAlbum = "";
+            },
+            doneNow(index) {
+                console.log(this.albums[index].done);
+
+                if (this.albums[index].done == false) {
+                    this.albums[index].done = true;
+                } else {
+                    this.albums[index].done = false;
+                }
             }
         }
     }

@@ -13,15 +13,18 @@
     <div class="container" id="root">
 
         <div class="field">
-            <input type="text" v-model="newAlbum">
+            <input type="text" 
+                v-model="newAlbum"
+                @keyup.enter="addAlbum">
             <button @click="addAlbum">Aggiungi</button>
         </div>
 
         <div class="list">
             <ul>
                 <li v-for="(album, index) in albums" 
-                    :class="album.done == true?'checked':'' ">
-                    {{album.text}}
+                    :class="album.done == true?'checked':'' "
+                    @click="doneNow(index)">
+                    <span>{{album.text}}</span>
                     <i class="fa-solid fa-xmark"
                         @click="cancel(index)"
                     ></i>
