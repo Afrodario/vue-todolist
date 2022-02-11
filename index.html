@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esercitazione Vue Todolist</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
     <div class="container" id="root">
 
-        <div>
+        <div class="field">
             <input type="text" v-model="newAlbum">
             <button>Aggiungi</button>
         </div>
 
-        <div>
+        <div class="list">
             <ul>
-                <li v-for="album in albums" 
+                <li v-for="(album, index) in albums" 
                     :class="album.done == true?'checked':'' ">
                     {{album.text}}
+                    <i class="fa-solid fa-xmark"
+                        @click="cancel(index)"
+                    ></i>
                 </li>
             </ul>
         </div>

@@ -15,12 +15,18 @@ const app = new Vue(
                 {
                     text: "Sign o' the Times",
                     done: true  
+                },
+                {
+                    text: "Dangerous",
+                    done: false  
                 }
             ]
         },
 
         methods: {
-
+            cancel(index) {
+                this.albums.splice(index, 1);
+            }
         }
     }
 );

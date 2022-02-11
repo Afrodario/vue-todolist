@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.field {
+    text-align: center;
+}
+
+ul li {
+    list-style-type: none;
+}
+
 .checked {
     text-decoration: line-through;
 }
