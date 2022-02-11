@@ -29,9 +29,14 @@ const app = new Vue(
             },
 
             addAlbum() {
-                this.albums.push({text: this.newAlbum, done: false});
-                this.newAlbum = "";
+                if (this.newAlbum == "") {
+                    alert("Il campo è vuoto")
+                } else {
+                    this.albums.push({text: this.newAlbum, done: false});
+                    this.newAlbum = "";
+                }
             },
+
             doneNow(index) {
                 console.log(this.albums[index].done);
 
@@ -41,6 +46,7 @@ const app = new Vue(
                     this.albums[index].done = false;
                 }
             }
+            
         }
     }
 );

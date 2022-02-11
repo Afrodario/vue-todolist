@@ -12,6 +12,13 @@
 
     <div class="container" id="root">
 
+        
+        <h1>
+            <i class="fa-solid fa-record-vinyl"></i>
+            Lista degli album da ascoltare
+            <i class="fa-solid fa-record-vinyl"></i>
+        </h1>
+
         <div class="field">
             <input type="text" 
                 v-model="newAlbum"
@@ -20,16 +27,20 @@
         </div>
 
         <div class="list">
-            <ul>
+            <ul v-if="albums.length">
                 <li v-for="(album, index) in albums" 
-                    :class="album.done == true?'checked':'' "
-                    @click="doneNow(index)">
-                    <span>{{album.text}}</span>
+                    :class="album.done == true?'checked':'' ">
+                    <span @click="doneNow(index)">
+                        {{album.text}}
+                    </span>
                     <i class="fa-solid fa-xmark"
-                        @click="cancel(index)"
-                    ></i>
+                        @click="cancel(index)">
+                    </i>
                 </li>
             </ul>
+            <div class="empty" v-else>
+                <span>Non ci sono album da ascoltare</span>
+            </div>
         </div>
 
     </div>

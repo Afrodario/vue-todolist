@@ -8,14 +8,53 @@
     width: 80%;
     margin: 0 auto;
     border: 1px solid black;
+    height: 100vh;
+    background-image: url(https://www.tag24.it/wp-content/uploads/2017/03/musica.jpg);
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
 }
 
 .field {
     text-align: center;
+    padding: 20px;
 }
 
-ul li {
+.field button {
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.field input {
+    padding: 10px;
+}
+
+.list {
+    width: 50%;
+    margin: 20px auto;
+}
+
+ul li, .empty {
     list-style-type: none;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+ul li:hover {
+    background-color: red;
+}
+
+ul li i {
+    float: right;
 }
 
 .checked {
