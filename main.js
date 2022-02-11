@@ -26,6 +26,10 @@ const app = new Vue(
         methods: {
             cancel(index) {
                 this.albums.splice(index, 1);
+            },
+
+            addAlbum() {
+                this.albums.push({text: this.newAlbum});
             }
         }
     }
