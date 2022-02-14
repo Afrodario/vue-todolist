@@ -21,6 +21,11 @@
 
         <div class="field">
             <input type="text" 
+                placeholder="Inserire artista"
+                v-model="newArtist"
+                @keyup.enter="addAlbum">
+            <input type="text"
+                placeholder="Inserire album" 
                 v-model="newAlbum"
                 @keyup.enter="addAlbum">
             <button @click="addAlbum">Aggiungi</button>
@@ -31,7 +36,7 @@
                 <li v-for="(album, index) in albums" 
                     :class="album.done == true?'checked':'' ">
                     <span @click="doneNow(index)">
-                        {{album.text}}
+                        {{album.artist}} - {{album.text}}
                     </span>
                     <i class="fa-solid fa-xmark"
                         @click="cancel(index)">

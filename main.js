@@ -3,21 +3,26 @@ const app = new Vue(
         el: "#root",
         data: {
             newAlbum: "",
+            newArtist: "",
             albums: [
                 {
                   text: "Rhythm Nation 1814",
+                  artist: "Janet Jackson",
                   done: true  
                 },
                 {
                     text: "Ray of Light",
+                    artist: "Madonna",
                     done: true  
                   },
                 {
                     text: "Sign o' the Times",
+                    artist: "Prince",
                     done: true  
                 },
                 {
                     text: "Dangerous",
+                    artist: "Michael Jackson",
                     done: false  
                 }
             ]
@@ -29,11 +34,12 @@ const app = new Vue(
             },
 
             addAlbum() {
-                if (this.newAlbum == "") {
-                    alert("Il campo è vuoto")
+                if (this.newAlbum == "" || this.newArtist == "") {
+                    alert("Uno o più campi sono vuoti")
                 } else {
-                    this.albums.push({text: this.newAlbum, done: false});
+                    this.albums.push({text: this.newAlbum, artist: this.newArtist, done: false});
                     this.newAlbum = "";
+                    this.newArtist = "";
                 }
             },
 
